@@ -24,6 +24,3 @@ camposelect = input("Escribe el nombre del campo: ")
 valueinsert = input("Inserta el valor que deseas insertar: ")
 
 response = supabase.table(table_name).update({camposelect: valueinsert}).eq(idName,idNumber).execute()
-
-
-
