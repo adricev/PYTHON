@@ -41,3 +41,18 @@ while True:
     valueinsert = input("Inserta el valor que deseas insertar: ")
 
     response = supabase.table(table_name).update({camposelect: valueinsert}).eq(idName, idNumber).execute()
+
+# Añadimos el ejercicio 2 para unificarlo todo en el mismo archivo 
+while buscando:
+    tabla = input('En que tabla quieres introducir los datos? \n - users \n - events \n - calendars \n - comments \n - tag \n')
+    for campoTabla in listaTablas:
+        
+        if tabla.lower() == campoTabla:
+            buscando = False
+
+    if buscando != False:
+        print("No se encontro la tabla, corrige si esta mal escrito")
+
+response = supabase.table(tabla).select("*").execute()
+
+datos = {}
