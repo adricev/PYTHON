@@ -56,3 +56,29 @@ while buscando:
 response = supabase.table(tabla).select("*").execute()
 
 datos = {}
+
+# Añadimos filtros para que el usuario no se equivoque al hacer la consulta
+while patata:
+    for campo in list(json.loads(response.model_dump_json())["data"][0].keys()):
+        valor = input(f"Ingrese el valor para {campo}: ")
+        datos[campo] = valor if valor != "" else None
+        print(datos[campo])
+    try:
+        print(datos)
+        response = supabase.table(tabla).insert([datos]).execute()
+        patata = False
+    except:
+        print("Los datos son invalidos")
+
+        # Añadimos filtros para que el usuario no se equivoque al hacer la consulta
+while patata:
+    for campo in list(json.loads(response.model_dump_json())["data"][0].keys()):
+        valor = input(f"Ingrese el valor para {campo}: ")
+        datos[campo] = valor if valor != "" else None
+        print(datos[campo])
+    try:
+        print(datos)
+        response = supabase.table(tabla).insert([datos]).execute()
+        patata = False
+    except:
+        print("Los datos son invalidos")
