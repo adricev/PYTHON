@@ -17,3 +17,6 @@ campos = list(json.loads(response.model_dump_json())["data"][0].keys())
 campoIndividual = ""
 for x in range(len(campos)):
     campoIndividual += "-"+campos[x]+"\n"
+
+print('Esta es la lista de los campos en: '+table_name)
+print(campoIndividual)
