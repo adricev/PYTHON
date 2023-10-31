@@ -11,3 +11,9 @@ table_name = input("Introduce el nombre de la tabla a modificar: \n -tag \n -cal
 
 #Hace una consulta de la tabla seleccionada:
 response = supabase.table(table_name).select("*").execute()
+
+#Carga el nombre de los campos que obtiene mediante la API de Supabase
+campos = list(json.loads(response.model_dump_json())["data"][0].keys())
+campoIndividual = ""
+for x in range(len(campos)):
+    campoIndividual += "-"+campos[x]+"\n"
