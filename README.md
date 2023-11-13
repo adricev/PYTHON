@@ -1,15 +1,40 @@
-# PYTHON
+# PYTHON con SUPABASE
 
-Este proyecto cuenta con un código escrito en python que permite acceder a una BBDD, la cual guarda la información de la aplicación que se prevee desarrollar para el TFG.
+Este script de Python utiliza la biblioteca Supabase para realizar operaciones de consulta y modificación en una base de datos Supabase. Permite al usuario listar campos de una tabla, seleccionar un campo por el cual restringir la modificación, y luego actualizar valores en esa tabla.
 
-El código permite consultar el nombre de las tablas, de los campos, de los datos, así como consultarlos, eliminarlos, modificarlos e insertarlos.
-Esto es un comienzo para poder acceder a dicha base de datos desde una aplicación móvil, puesto que se conecta a ella mediante la propia API del proveedor (supabase)
-y los códigos para acceder a dicha API no cambiarán demasiado al usar otro lenguaje de programación
+## Requisitos
 
-Para modificar una tabla deberías escribir el nombre de la tabla, posteriormente el nombre del campo, nombre del ID del campo y nombre nuevo del valor.
+- Python 3.x
+- [Supabase Python Client](https://github.com/supabase/supabase-py)
 
-data, response = supabase.table('countries')
-  .update({'name': 'Austrailia'})
-  .eq('id', 1)
-  .execute()
+## Configuración
 
+Antes de ejecutar el script, asegúrate de tener instalada la biblioteca Supabase Python Client. Puedes instalarla ejecutando:
+
+```bash
+pip install supabase-py
+```
+
+Asegúrate de tener la URL y la clave de la API de Supabase listas para usar.
+
+## Uso
+
+1. Ejecuta el script.
+2. Ingresa el nombre de la tabla que deseas modificar (`tag`, `calendars`, `comments`, `events`, `users`).
+3. Se mostrará una lista de campos disponibles en la tabla seleccionada.
+4. Proporciona el nombre del campo "Id" para restringir la modificación.
+5. Proporciona el valor de la Id.
+6. Proporciona el nombre del campo que deseas modificar.
+7. Ingresa el nuevo valor para ese campo.
+
+El script validará las entradas del usuario para evitar operaciones incorrectas.
+
+## Notas
+
+- Asegúrate de tener los permisos adecuados para realizar operaciones de modificación en la base de datos.
+
+---
+
+**Nota:** Asegúrate de manejar las credenciales con precaución y no las compartas públicamente.
+
+Este README proporciona una breve descripción del script y cómo utilizarlo. Puedes agregar más secciones según tus necesidades.
