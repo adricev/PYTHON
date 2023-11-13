@@ -17,6 +17,17 @@ pip install supabase-py
 
 Asegúrate de tener la URL y la clave de la API de Supabase listas para usar.
 
+# Configuración de Supabase
+```python
+
+url = "https://secxumjiywgzbfdwafsc.supabase.co"
+key = "..."  # Inserta tu clave de API aquí
+supabase = create_client(url, key)
+```
+# Solicita al usuario el nombre de la tabla
+table_name = input("Introduce el nombre de la tabla a modificar: \n -tag \n -calendars \n -comments \n -events \n -users \n ")
+
+
 ## Uso
 
 1. Ejecuta el script.
@@ -31,7 +42,7 @@ El script validará las entradas del usuario para evitar operaciones incorrectas
 
 ## Notas
 
-- Asegúrate de tener los permisos adecuados para realizar operaciones de modificación en la base de datos.
+- Asegúrate de tener los permisos adecuados para realizar operaciones de modificación en la base de datos, aunque no debería de haber ningún problema con ellos.
 
 ---
 
